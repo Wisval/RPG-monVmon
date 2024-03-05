@@ -1,0 +1,43 @@
+class game():
+  def __init__(self):
+   
+
+
+
+class player():
+  def __int__(self):
+  
+
+
+
+
+
+class enemy():
+  def __init__(self):
+    
+
+
+
+
+class status_field():
+  def __init__(self, name, type, value):
+    self.name = name
+    self.type = type
+    self.value = value
+
+
+
+class Animal():
+
+   def __init__(self, name, atk, defense, hp, spd, type): 
+     super().__init__()
+     self.name = name
+     self.atk = atk
+     self.defense = defense
+     self.hp = hp
+     self.spd = spd
+     self.type = type
+     
+
+
+
