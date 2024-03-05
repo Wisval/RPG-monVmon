@@ -1,43 +1,58 @@
-class game():
-  def __init__(self):
-   
+#class game():
+ # def __init__(self):
+  #  self.board = [[" " for i in range(3)] for i in range(3)]
+  #  self.turn = "x"
+   # self.winner = None
+    #self.game_over = False
+    
 
 
 
-class player():
-  def __int__(self):
+#class player(game):
+ # def __int__(self):
   
 
 
 
 
 
-class enemy():
-  def __init__(self):
+#class enemy(game):
+ # def __init__(self):
     
 
 
 
 
-class status_field():
-  def __init__(self, name, type, value):
-    self.name = name
-    self.type = type
-    self.value = value
+#class status_field():
+ # def __init__(self, name, type, value):
+  #  self.name = name
+   # self.type = type
+    #self.value = value
 
 
 
 class Animal():
 
-   def __init__(self, name, atk, defense, hp, spd, type): 
+   def __init__(self, name, atk, hp, type): 
      super().__init__()
      self.name = name
      self.atk = atk
-     self.defense = defense
-     self.hp = hp
-     self.spd = spd
-     self.type = type
      
+     self.hp = hp
+     
+     self.type = type
+  
+
+   def __str__(self):
+    return f"{self.name}({self.atk}, {self.hp}, {self.type})"
+
+
+p1 = Animal("v", 10, 10, "wave controller")
+
+print(p1)
+
+
+
 
 
 
