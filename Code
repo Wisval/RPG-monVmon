@@ -1,3 +1,8 @@
+from tkinter import Tk 
+from tkinter import ttk
+
+
+
 #class game():
  # def __init__(self):
   #  self.board = [[" " for i in range(3)] for i in range(3)]
@@ -23,11 +28,16 @@
 
 
 
-#class status_field():
- # def __init__(self, name, type, value):
-  #  self.name = name
-   # self.type = type
-    #self.value = value
+class status_field():
+  def __init__(self, name, type, value):
+    self.name = name
+    self.type = type
+    self.value = value
+  def __str__(self):
+    return f"{self.name}({self.type}, {self.value})"
+
+f1 = status_field("65th floor", "Water", str(2))
+
 
 
 
@@ -47,9 +57,20 @@ class Animal():
     return f"{self.name}({self.atk}, {self.hp}, {self.type})"
 
 
-p1 = Animal("v", 10, 10, "wave controller")
+a1 = Animal("v", "atk " + str(10), "hp " + str(10), "Water") 
 
-print(p1)
+
+
+
+
+def function():
+  if a1.type == f1.type:
+   a1.atk = a1.atk + "+" + f1.value 
+  print(f1) 
+  print(a1) 
+  
+
+function()
 
 
 
