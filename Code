@@ -36,44 +36,86 @@ class status_field():
   def __str__(self):
     return f"{self.name}({self.type}, {self.value})"
 
-f1 = status_field("65th floor", "Water", str(2))
+f1 = status_field("65th floor", "Water", 2)
 
 
 
 
 class Animal():
 
-   def __init__(self, name, atk, hp, type): 
+   def __init__(self, name, atk, hp, spd, type): 
      super().__init__()
      self.name = name
      self.atk = atk
      
      self.hp = hp
-     
+     self.spd = spd
      self.type = type
   
 
    def __str__(self):
-    return f"{self.name}({self.atk}, {self.hp}, {self.type})"
+    return f"{self.name}(atk: {self.atk}, hp: {self.hp}, spd: {self.spd}, {self.type})"
 
 
-a1 = Animal("v", "atk " + str(10), "hp " + str(10), "Water") 
+a1 = Animal("v", 10, 10, 10, "Water") 
 
 
-
+a2 = Animal("Z", 10, 10, 10, "Air") 
 
 
 def function():
   if a1.type == f1.type:
-   a1.atk = a1.atk + "+" + f1.value 
+   a1.atk = a1.atk + f1.value 
+    
   print(f1) 
   print(a1) 
+  print(a2)
+
+  if a1.spd > a2.spd:
+   print(a1.name, "attacks first")
+   a2.hp = a2.hp - a1.atk
+   if a2.hp <=0:
+    print(a2.name, "has died")
+   elif a2.hp > 0:
+    print(a1.name, "attacks,", a2.name, "only has", a2.hp, "hp left")
+    a1.hp = a1.hp - a2.atk
+    if a1.hp <=0:
+      print(a1.name, "has died")
+    elif a1.hp > 0:
+     print(a2.name, "attacks,", a1.name, "only has", a1.hp, "hp left")
+
+
+
+
+  
+  else: 
+    print(a2.name, "attacks first") 
+    a1.hp = a1.hp - a2.atk  
+    if a1.hp <= 0: 
+      print(a1.name, "has died") 
+    elif a1.hp > 0: 
+      print(a2.name, "attacks,", a1.name, "only has", a1.hp, "hp left")
+      a2.hp = a2.hp - a1.atk
+      if a2.hp <= 0:
+        print(a2.name, "has died")
+      elif a2.hp > 0:
+        print(a1.name, "attacks,", a2.name, "only has", a2.hp, "hp left")
+        
+    
+  
+ 
+  
+  
+  
+
+ 
+    
+  
+
+
+  
   
 
 function()
-
-
-
-
 
 
