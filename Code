@@ -1,132 +1,117 @@
-import numpy as np 
+#import numpy as np
+
 import tkinter
-from tkinter import Tk 
-from tkinter import ttk
+from tkinter import Tk
+
+# The line below imports ttk from tkinter, but it is not used in the code
+# from tkinter import ttk
 
 
 
 #class game():
- # def __init__(self):
-  #  self.board = [[" " for i in range(3)] for i in range(3)]
-  #  self.turn = "x"
-   # self.winner = None
-    #self.game_over = False
-    
-
-
+# def __init__(self):
+#  self.board = [[" " for i in range(3)] for i in range(3)]
+#  self.turn = "x"
+# self.winner = None
+#self.game_over = False
 
 #class player(game):
- # def __int__(self):
-  
-
-
-
-
+# def __int__(self):
 
 #class enemy(game):
- # def __init__(self):
-    
+# def __init__(self):
 
-
+f_types = ["water", "fire", "grass", "electric", "rock", "ice", "air", "dark", "light"]
+f_names = ["65th floor", "floor of death(43rd floor)", "floor of tests"]
 
 
 class status_field():
+
   def __init__(self, name, type, value):
     self.name = name
     self.type = type
     self.value = value
+
   def __str__(self):
     return f"{self.name}({self.type}, Additive_value: {self.value})"
 
-f1 = [ status_field("65th floor", "Water", 2), status_field("65th floor", "Air", 2)]
 
+f1 = status_field("65th floor", "Water", 2)
+  
 
 
 
 class Animal():
 
-   def __init__(self, name, atk, hp, spd, type): 
-     super().__init__()
-     self.name = name
-     self.atk = atk
-     
-     self.hp = hp
-     self.spd = spd
-     self.type = type
-  
+  def __init__(self, name, atk, hp, spd, type):
+    super().__init__()
+    self.name = name
+    self.atk = atk
 
-   def __str__(self):
+    self.hp = hp
+    self.spd = spd
+    self.type = type
+
+  def __str__(self):
     return f"{self.name}(atk: {self.atk}, hp: {self.hp}, spd: {self.spd}, {self.type})"
 
 
-a1 = Animal("v", 10, 11, 10, "Water") 
+a1 = Animal("Rapid", 10, 11, 10, "Water")
 
-
-a2 = Animal("Z", 10, 10, 11, "Air") 
-
-
+a2 = Animal("Garuda", 10, 10, 11, "Air")
 
 #testing of Gui
 window = Tk()
-window.geometry("450x350")
+window.geometry("500x350")
 window.title("MonVMon")
-
-
 
 #button_widget.pack()
 
-
-
-
-
-
-
-
-
 ###################################################
+
+def ran_function():
+  
+    
+    
+
+
 
 #Function to test and conditional branch between both defined entities
 
+
 def function():
   #trying to randomly remove an element from the array so that the field choice is randomised
-  
-  
-  
-  
+
   if a1.type == f1.type:
-   a1.atk = a1.atk + f1.value 
+    a1.atk = a1.atk + f1.value
 
   if a2.type == f1.type:
     a2.atk = a2.atk + f1.value
-    
-  
-  
-  print(f1) 
-  print(a1) 
+
+  print(f1)
+  print(a1)
   print(a2)
 
   if a1.spd > a2.spd:
-   print(a1.name, "attacks first")
-   a2.hp = a2.hp - a1.atk
-   if a2.hp <=0:
-    print(a2.name, "has died")
-   elif a2.hp > 0:
-    print(a1.name, "attacks,", a2.name, "only has", a2.hp, "hp left")
-    print(a2.name, "attacks") 
+    print(a1.name, "attacks first")
+    a2.hp = a2.hp - a1.atk
+    if a2.hp <= 0:
+      print(a2.name, "has died")
+    elif a2.hp > 0:
+      print(a1.name, "attacks,", a2.name, "only has", a2.hp, "hp left")
+      print(a2.name, "attacks")
+      a1.hp = a1.hp - a2.atk
+      if a1.hp <= 0:
+        print(a1.name, "has died")
+      elif a1.hp > 0:
+        print(a2.name, "attacks,", a1.name, "only has", a1.hp, "hp left")
+
+  else:
+    print(a2.name, "attacks first")
     a1.hp = a1.hp - a2.atk
-    if a1.hp <=0:
+    if a1.hp <= 0:
       print(a1.name, "has died")
     elif a1.hp > 0:
-     print(a2.name, "attacks,", a1.name, "only has", a1.hp, "hp left")
-
-
-  
-  else: 
-    print(a2.name, "attacks first") 
-    a1.hp = a1.hp - a2.atk  
-    if a1.hp <= 0: 
-      print(a1.name, "has died") 
-    elif a1.hp > 0: 
       print(a2.name, "attacks,", a1.name, "only has", a1.hp, "hp left")
       print(a1.name, "attacks")
       a2.hp = a2.hp - a1.atk
@@ -134,24 +119,15 @@ def function():
         print(a2.name, "has died")
       elif a2.hp > 0:
         print(a1.name, "attacks,", a2.name, "only has", a2.hp, "hp left")
-        
-    
-  
- 
-  
-##################################################  
-  
+
+
+##################################################
+
 button_widget = tkinter.Button(window, text="Start", command=function).pack()
-    
-  
 
 window.mainloop()
-  
-  
 
 #function()
-
-
 
 
   
