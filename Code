@@ -1,5 +1,5 @@
 #import numpy as np
-
+import random
 import tkinter
 from tkinter import Tk
 
@@ -21,7 +21,7 @@ from tkinter import Tk
 #class enemy(game):
 # def __init__(self):
 
-f_types = ["water", "fire", "grass", "electric", "rock", "ice", "air", "dark", "light"]
+f_types = ["Water", "Fire", "Grass", "Electric", "Rock", "Ice", "Air", "Dark", "Light"]
 f_names = ["65th floor", "floor of death(43rd floor)", "floor of tests"]
 
 
@@ -36,7 +36,7 @@ class status_field():
     return f"{self.name}({self.type}, Additive_value: {self.value})"
 
 
-f1 = status_field("65th floor", "Water", 2)
+f1 = status_field(random.choice(f_names), random.choice(f_types), 2)
   
 
 
@@ -69,7 +69,7 @@ window.title("MonVMon")
 
 ###################################################
 
-def ran_function():
+
   
     
     
@@ -80,7 +80,8 @@ def ran_function():
 
 
 def function():
-  #trying to randomly remove an element from the array so that the field choice is randomised
+  #trying to randomly remove an element from the array so that the field choice is 
+  #randomized 
 
   if a1.type == f1.type:
     a1.atk = a1.atk + f1.value
@@ -128,19 +129,5 @@ button_widget = tkinter.Button(window, text="Start", command=function).pack()
 window.mainloop()
 
 #function()
-
-
-  
-  
-
- 
-    
-  
-
-
-  
-  
-
-function()
 
 
